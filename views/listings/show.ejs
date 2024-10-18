@@ -81,9 +81,11 @@
           </div>
 
         </div>
-        <hr>
-        <h4 class="all-Reviews">All Reviews</h4>
+       
+        <% if(listing.reviews.length > 0) {  %>
         <div class="row">
+        
+          <h4 class="all-Reviews">All Reviews</h4>
           <% for(review of listing.reviews) { %>
             <div class="card col-4 ms-5  mb-3 pt-2 cardby">
               <div class="card-body cardbd">
@@ -109,8 +111,10 @@
               
             </div>
             <% } %>
-        </div>
+          </div>
+          <% } %>
       </div>
+
     </div>
 
 
