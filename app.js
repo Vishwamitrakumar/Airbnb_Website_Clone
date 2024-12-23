@@ -23,12 +23,7 @@ const user = require("./routes/user.js");
 const search = require("./routes/search.js");
 
 
-
 const dbUrl = process.env.ATLASDB_URL;
-
-async function main() {
-  await mongoose.connect(dbUrl);
-}
 
 main()
   .then(() => {
@@ -38,7 +33,9 @@ main()
     console.log(err);
   });
 
-
+async function main() {
+  await mongoose.connect(dbUrl);
+}
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
